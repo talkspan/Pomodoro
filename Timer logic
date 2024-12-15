@@ -9,16 +9,13 @@ class PomodoroTimer:
         self.root.title("Pomodoro Timer")
         self.root.geometry("300x200")
         
-        # Initialize time settings (25 minutes work, 5 minutes break)
         self.work_time = 25 * 60  # 25 minutes
         self.break_time = 5 * 60  # 5 minutes
         
-        # Timer state
         self.timer_running = False
         self.time_left = self.work_time
         self.is_break_time = False
         
-        # Create widgets
         self.time_display = tk.Label(self.root, text="25:00", font=("Helvetica", 40))
         self.time_display.pack(pady=30)
 
@@ -61,7 +58,6 @@ class PomodoroTimer:
         time_str = f"{minutes:02}:{seconds:02}"
         self.time_display.config(text=time_str)
 
-# Main Program
 if __name__ == "__main__":
     root = tk.Tk()
     pomodoro_timer = PomodoroTimer(root)
